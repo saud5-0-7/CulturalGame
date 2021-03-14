@@ -46,6 +46,13 @@ public class MainActivity<locale> extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
+        SharedPreferences sharedPreferences = getSharedPreferences("app_pref",MODE_PRIVATE);
+        String applying = sharedPreferences.getString(APP_LANG,"");
+        if(!applying.equals("ar"))
+            LocaleHelper.setLocale(this,applying);
+
         setContentView(R.layout.activity_main);
 
         imageView = findViewById(R.id.image_view_question);
@@ -113,7 +120,13 @@ public class MainActivity<locale> extends AppCompatActivity {
     }
 
     private void saveLanguage(String language) {
-        // TODO:
+        SharedPreferences sharedPreferences = getSharedPreferences("app_pref", MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        String lang = "ar";
+        editor.putString(APP_LANG,lang);
+        editor.apply();
+
+
     }
 
 }
