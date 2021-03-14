@@ -1,17 +1,28 @@
 package com.barmej.culturalwordsgamebysaud;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.res.Configuration;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 
-public class MainActivity extends AppCompatActivity {
+import java.util.Locale;
 
-    private ImageButton imageButton;
 
+public class MainActivity<locale> extends AppCompatActivity {
+
+
+    private static final String APP_LANG = null;
     private ImageView imageView;
 
     private final int[] culturalImages = {
@@ -40,12 +51,10 @@ public class MainActivity extends AppCompatActivity {
         imageView = findViewById(R.id.image_view_question);
         currentIndex = 0;
         imageView.setImageResource(culturalImages[currentIndex]);
-        
 
 
-
-        imageButton = (ImageButton) findViewById(R.id.button_open_answer);
-        imageButton.setOnClickListener(new View.OnClickListener(){
+        ImageButton imageButton = (ImageButton) findViewById(R.id.button_open_answer);
+        imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openAnswer();
@@ -53,7 +62,12 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
-    public void openAnswer(){
+
+    public void changeLanguage(View view) {
+        showLanguageDialog();
+    }
+
+    public void openAnswer() {
         Intent intent = new Intent(this, AnswerActivity.class);
         intent.putExtra("index", currentIndex);
         startActivity(intent);
@@ -61,19 +75,58 @@ public class MainActivity extends AppCompatActivity {
 
     public void changePhoto(View view) {
         currentIndex++;
-        if(currentIndex >= culturalImages.length) {
+        if (currentIndex >= culturalImages.length) {
             currentIndex = 0;
         }
         imageView.setImageResource(culturalImages[currentIndex]);
 
     }
-    public void onShareQuestionClicked(View view){
-        Intent intent = new Intent(MainActivity.this,ShareActivity.class);
-        intent.putExtra("Image Id", culturalImages[currentIndex]) ;
+
+    public void onShareQuestionClicked(View view) {
+        Intent intent = new Intent(MainActivity.this, ShareActivity.class);
+        intent.putExtra("Image Id", culturalImages[currentIndex]);
         startActivity(intent);
     }
 
+
+    private void showLanguageDialog() {
+        AlertDialog alertDialog = new AlertDialog.Builder(this)
+                .setTitle(R.string.button_change_language)
+                .setItems(R.array.languages, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int which) {
+                        String language = "ar";
+                        switch (which) {
+                            case 0:
+                                language = "ar";
+                                break;
+                            case 1:
+                                language = "en";
+                                break;
+                        }
+                        saveLanguage(language);
+                        LocaleHelper.setLocale(MainActivity.this, language);
+                        recreate();
+                    }
+                }).create();
+        alertDialog.show();
     }
+
+    private void saveLanguage(String language) {
+        // TODO:
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
 
 
 

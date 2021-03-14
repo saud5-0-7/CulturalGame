@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
     <string name="app_name">لعبة الكلمات التراثية</string>
     <string name="app_title">الكلمات التراثية</string>
     <string name="textview" >الاجابة هي</string>
@@ -8,6 +9,9 @@
     <string name="share_the_question_with_friends">اسأل صديق</string>
     <string name="share_title_hint">شارك العنوان</string>
     <string name="share_question_text">شارك السؤال</string>
+    <string name="button_change_language">تغيير اللغة</string>
+    <string name="language">language</string>
+    <string name="change_lang_text" >تغيير النص</string>
 
     <string-array name="cultural_names">
         <item>العقال</item>
@@ -39,7 +43,10 @@
         <item>قبعة حمراء اشتهرت في بلاد الشام ومصر والمغرب</item>
         <item>غطاء يُكوّر فوق الرأس</item>
         <item>ثوب عربي يُلبس بكثرة في دول الخليج</item>
+
     </string-array>
+
+
 
 </resources>
 

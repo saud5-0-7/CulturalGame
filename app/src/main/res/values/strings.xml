@@ -7,37 +7,41 @@
     <string name="share_the_question_with_friends">Ask friend</string>
     <string name="share_title_hint">Share title</string>
     <string name="share_question_text">share question</string>
+    <string name="button_change_language">change language</string>
+    <string name="language">language</string>
+    <string name="change_lang_text">change_lang_text</string>
+
 
     <string-array name="cultural_names">
-        <item>العقال</item>
-        <item>الفروة</item>
-        <item>السدو</item>
-        <item>الحناء</item>
-        <item>الدلة</item>
-        <item>الخف</item>
-        <item>الخنجر</item>
-        <item>النمرقة</item>
-        <item>القنديل / السراج</item>
-        <item>الفانوس</item>
-        <item>الطربوش</item>
-        <item>العمامة</item>
-        <item>الدشداشة</item>
+        <item> Iqal </item>
+        <item> Scalp </item>
+        <item> Sadu </item>
+        <item> Henna </item>
+        <item> Directory </item>
+        <item> Moccasin </item>
+        <item> Dagger </item>
+        <item> Tigress </item>
+        <item> The Lamp / Os </item>
+        <item> Lantern </item>
+        <item> Cowl </item>
+        <item> Turban </item>
+        <item> Dishdasha </item>
     </string-array>
 
     <string-array name="cultural_desc">
-        <item>يوضع فوق الحطّة\الغترة لتثبيتها</item>
-        <item>مبطنة بالصوف، تلبس في الشتاء للوقاية من البرد</item>
-        <item>أحد أنواع النسيج البدوي التقليدي</item>
-        <item>تستخدم في صبغ الشعر واللحية، كما تستخدم أيضاً في تجميل الأيدي بالنسبة للنساء</item>
-        <item>الوعاء المستخدم في تقديم القهوة عند العرب</item>
-        <item>مصنوع من الجلد، يُلبس في القدم، اشتُهر قديماً عند العرب</item>
-        <item>سلاح أبيض صغير يوضع على الخصر</item>
-        <item>وسادة صغيرة يُتكأ عليها</item>
-        <item>اسم الاداة التي كانت تُستخدم للإضاءة قديما</item>
-        <item>أداة تُستخدم للإضاءة والزينة</item>
-        <item>قبعة حمراء اشتهرت في بلاد الشام ومصر والمغرب</item>
-        <item>غطاء يُكوّر فوق الرأس</item>
-        <item>ثوب عربي يُلبس بكثرة في دول الخليج</item>
+        <item> Placed over the hat / ghutra to install it </item>
+        <item> Lined with wool, to protect against the cold </item>
+        <item> A traditional Bedouin textile </item>
+        <item> It is used to dye hair and beard, and it is also used to beautify the hands of women </item>
+        <item> The bowl used for serving coffee by Arabs </item>
+        <item> Made of leather, worn on the feet, was famous in the past by Arabs </item>
+        <item> A small white weapon placed on the waist </item>
+        <item> Small pillow to rest on </item>
+        <item> The name of the tool that was used in ancient lighting </item>
+        <item> A tool used for lighting and decoration </item>
+        <item> A red hat popular in the Levant, Egypt and Morocco </item>
+        <item> Overhead Cap </item>
+        <item> Arab dress widely worn in the Gulf countries </item>
     </string-array>
 
 
