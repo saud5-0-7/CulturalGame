@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
 
         imageView = findViewById(R.id.image_view_question);
 
-        if(savedInstanceState.containsKey("current_index")) {
+        if(savedInstanceState != null && savedInstanceState.containsKey("current_index")) {
             currentIndex = savedInstanceState.getInt("current_index", 0);
         } else {
             currentIndex = 0;
