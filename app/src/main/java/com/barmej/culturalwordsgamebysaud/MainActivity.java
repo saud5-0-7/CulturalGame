@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.os.Bundle;
+import android.os.PersistableBundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -19,7 +20,7 @@ import android.widget.ImageView;
 import java.util.Locale;
 
 
-public class MainActivity<locale> extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity {
 
 
     private static final String APP_LANG = null;
@@ -50,13 +51,19 @@ public class MainActivity<locale> extends AppCompatActivity {
 
         SharedPreferences sharedPreferences = getSharedPreferences("app_pref",MODE_PRIVATE);
         String applying = sharedPreferences.getString(APP_LANG,"");
-        if(!applying.equals("ar"))
+        if(!applying.equals(""))
             LocaleHelper.setLocale(this,applying);
 
         setContentView(R.layout.activity_main);
 
         imageView = findViewById(R.id.image_view_question);
-        currentIndex = 0;
+
+        if(savedInstanceState.containsKey("current_index")) {
+            currentIndex = savedInstanceState.getInt("current_index", 0);
+        } else {
+            currentIndex = 0;
+        }
+
         imageView.setImageResource(culturalImages[currentIndex]);
 
 
@@ -122,13 +129,18 @@ public class MainActivity<locale> extends AppCompatActivity {
     private void saveLanguage(String language) {
         SharedPreferences sharedPreferences = getSharedPreferences("app_pref", MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
-        String lang = "ar";
-        editor.putString(APP_LANG,lang);
+        editor.putString(APP_LANG,language);
         editor.apply();
 
 
     }
 
+
+    @Override
+    protected void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putInt("current_index", currentIndex);
+    }
 }
 
 
